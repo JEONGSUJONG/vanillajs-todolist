@@ -1,6 +1,6 @@
 # Vanilla-JavaScript로 크롬 앱 만들기
 
-[😮‍💨 노마드코드 강의 바로가기](https://nomadcoders.co/javascript-for-beginners/lobby)
+[ToDoList](https://jeongsujong.github.io/vanillajs-todolist/)
 
 <details>
 <summary>2024.01.10</summary>
