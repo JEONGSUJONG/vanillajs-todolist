@@ -295,9 +295,38 @@ function paintToDo(newTodo) {
 - li 요소 안에 span을 추가하고 Input된 `newTodo`를 넣어준다. 
 - `toDoList` id 에 해당하는 Element에 기입한다.
 
-<h2>#7.2 Deleting To Do</h2>
-<h4>Deleting To Do</h4>
-- 저장은 되지만 삭제가 되지 않는 문제 발생
-  - 
+</details>
+
+
+<details>
+<summary>2024.01.11</summary>
+<h2>#7.4 Loding To Dos part One</h2>
+<h4>저장은 되지만 새로고침후 local에는 남아있고 화면에는 안보이는 문제점</h4>
+
+1. `stringigy` 사용하여 배열을 안의 요소들을 문자열로 변환
+2. `parse` 사용하여 object로 만들어 준다.
+  - `localStorage.getItem("todos")` : `'["a","b","c"]'`
+  - `JSON.parse(localStorage.getItem("todos"))` : `(3) ['a', 'b', 'c']`
+
+![image]("https://github.com/JEONGSUJONG/Readme_main/assets/142254876/14b472b6-bbcd-4185-b61c-d710ce08dde1")
+
+```javascript
+const TODOS_KEY = "todos";
+const savedToDos = localStorage.getItem(TODOS_KEY);
+console.log(savedToDos);
+if (savedToDos !== null) {
+    const parsedToDos = JSON.parse(savedToDos);
+    console.log(parsedToDos);
+}
+```
+
+![image]("https://github.com/JEONGSUJONG/Readme_main/assets/142254876/14187b08-209e-4330-88bf-fb83e68e3b1a"")
+
+#### `parsedToDos.forEach`
+- `forEach` : 각각의 배열의 요소들을 한 번씩 실행 해준다.
+  - `parsedToDos.forEach((item) => console.log("this is the turn of", item));`
+
+![image]("https://github.com/JEONGSUJONG/Readme_main/assets/142254876/21af73f2-d66d-4acb-9119-42d6d51ac4f2")
+
 
 </details>
