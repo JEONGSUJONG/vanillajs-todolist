@@ -308,7 +308,7 @@ function paintToDo(newTodo) {
   - `localStorage.getItem("todos")` : `'["a","b","c"]'`
   - `JSON.parse(localStorage.getItem("todos"))` : `(3) ['a', 'b', 'c']`
 
-![image]("https://github.com/JEONGSUJONG/Readme_main/assets/142254876/14b472b6-bbcd-4185-b61c-d710ce08dde1")
+<img width=100% alt="image" src="https://github.com/JEONGSUJONG/Readme_main/assets/142254876/14b472b6-bbcd-4185-b61c-d710ce08dde1">
 
 ```javascript
 const TODOS_KEY = "todos";
@@ -320,13 +320,13 @@ if (savedToDos !== null) {
 }
 ```
 
-![image]("https://github.com/JEONGSUJONG/Readme_main/assets/142254876/14187b08-209e-4330-88bf-fb83e68e3b1a"")
+<img width=100% alt="image" src="https://github.com/JEONGSUJONG/Readme_main/assets/142254876/14187b08-209e-4330-88bf-fb83e68e3b1a">
 
 #### `parsedToDos.forEach`
 - `forEach` : 각각의 배열의 요소들을 한 번씩 실행 해준다.
   - `parsedToDos.forEach((item) => console.log("this is the turn of", item));`
 
-![image]("https://github.com/JEONGSUJONG/Readme_main/assets/142254876/21af73f2-d66d-4acb-9119-42d6d51ac4f2")
+<img width="344" alt="image" src="https://github.com/JEONGSUJONG/Readme_main/assets/142254876/21af73f2-d66d-4acb-9119-42d6d51ac4f2">
 
 
 </details>
