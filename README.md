@@ -328,5 +328,122 @@ if (savedToDos !== null) {
 
 <img width="344" alt="image" src="https://github.com/JEONGSUJONG/Readme_main/assets/142254876/21af73f2-d66d-4acb-9119-42d6d51ac4f2">
 
+<h5>요약</h5>
 
+- ToDoList 작성 시 localStorage 에 저장이 된다. 하지만, string 타입으로 저장됨.
+- `JSON.parse` 를 통해 object 타입으로 바꿔준다. -> index를 통해 각각의 value에 접근이 가능하다.
+- `forEach` 를 통해 object의 모든 index를 순찰(?)하며 함수를 실행한다.
+
+<h2>#7.5 Loding To Dos part Two</h2>
+<h4>`forEach` 사용 -> 문제해결</h4>
+
+```javascript
+parsedToDos.forEach(paintToDo);
+```
+
+- 새로고침 하여도 localStorage 에 남아있는 요소들을 다시 보여주기 위함. 
+  - 단, 새로고침한 페이지에서 ToDoList를 작성하고 다시 새로고침하면 전에 작성한 localStorage 가 사라진다. (덮어써짐)
+  - javascript 시작할 때 `const toDos = [];` 항상 비어있기 때문
+    - 해결 : application이 시작될 때 toDos array를 빈 값으로 시작하는 대신에, `const`를 `let`으로 바꿔서 업데이트가 가능하도록 만들고, localStorage에 `toDo` 들이 있으면 `toDos`에 `parsedToDos`를 넣어서 전에 있던 `toDo`들을 복원하면된다.
+
+```javascript
+let toDos = [];
+
+if (savedToDos !== null) {
+    const parsedToDos = JSON.parse(savedToDos);
+    toDos = parsedToDos;
+    parsedToDos.forEach(paintToDo);
+}
+```
+
+<h2>#7.6 Deleting To Dos part one</h2>
+<h4>id값을 지정하고 id값을 html li 태그에 넣기</h4>
+
+- localStorage에 toDos를 저장하는 것까진 완료했지만 localStorage에서의 삭제가 이루어지지 않음.
+
+1. `toDos`에게 id를 준다.
+```
+{id:1234, toDo:"Eat"}
+```
+  - `Date.now()` 를 사용하여 랜덤한 id를 준다.
+  - id값을 주기 위해서 object로 값을 전달해줘야한다.
+  - `handleToDoSubmit` 
+  ```javascript
+  const newTodoObj = {
+    text:newTodo,
+    id:Date.now();
+  };
+  toDos.push(newTodoObj);
+  ```
+
+<img width="789" alt="image" src="https://github.com/JEONGSUJONG/Readme_main/assets/142254876/5c6c85fd-1545-4bd8-8798-fd7db68cb6ec">
+
+- id를 사용하기 위해 id 값을 html에 놔두고싶음.
+  1. `paintToDo` : object를 인자로 받아야함.
+  ```javascript
+  paintToDo(newTodoObj);
+  ```
+  <img width="295" alt="image" src="https://github.com/JEONGSUJONG/Readme_main/assets/142254876/ebd0fee8-f3e6-49cf-999a-8985ff9601ca">
+
+  2. Object 안의 `text` 를 보여주고싶음.
+  3. 아래와 같이 `paintToDo` 함수 수정 하면 다시 정상적으로 보임.
+
+  ```javascript
+  span.innerText = newTodo.text;
+  ```
+
+  4. id를 아직 사용하지 않음... ㅠㅠ
+  ```javascript
+  li.id = newTodo.id;
+  ```
+  <img width="415" alt="image" src="https://github.com/JEONGSUJONG/Readme_main/assets/142254876/49c45390-521c-4326-b66b-41bd8e6e01ad">
+
+- Which `Id` Do u want to Delete?
+  - `filter` 사용
+  ```javascript
+  let array = [3, 5, 11, 0, 9, 'string'];
+  et result = array.filter((value) => value < 10)
+  console.log(result);  // [3, 5, 0, 9]
+  ```
+
+  - `true`를 return 해야만한다.
+  - 만약 `false`를 return하면 그 item은 새로운 배열에 포함되지 않는다.
+  - 
+  ```javascript
+  function deleteToDo(event) {
+    const li = event.target.parentElement;
+    toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
+    li.remove();
+    saveToDos();
+  }
+  ```
+
+--- 다른 페이지에 작성 ---
+<h2>#8.0 Geolocation</h2>
+<h4>navigator , geolocation</h4>
+
+- `geolocation` 함수 : `getCurrentPostion` 과 함께 사용
+  - `getCurrentPostion(모든게 잘 됐을 때 실행 될 함수 , 에러가 발생할 경우 실행할 함수)`
+
+<a href = https://developer.mozilla.org/ko/docs/Web/API/Geolocation>geolocation 함수</a>
+  
+```javascript
+function onGeoOk(position) {
+    const lat = position.coords.latitude;   // 위도
+    const lng = position.coords.longitude;  // 경도
+    console.log("You live in", lat, lng);
+}
+
+function onGeoError() {
+    alert("Can't find you. No wather for you");
+}
+
+navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
+```
+
+- 날씨 API : 현재 위치의 날씨 API
+<a href = https://openweathermap.org>바로가기</a>
+
+  - Sign in -> API -> current weather data -> By geographic coordinates (좌표를 통한 날씨)
+  - 
 </details>
