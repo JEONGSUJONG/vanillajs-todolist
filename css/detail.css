@@ -1,0 +1,29 @@
+#clock {
+    color: white;
+    font-weight: bold;
+    font-size: 100px;
+    text-shadow: 2px 2px 2px black;
+}
+
+#weather {
+    color: white;
+    opacity: 80%;
+    text-shadow: 2px 2px 2px black;
+}
+
+#quote {
+    color: white;
+    font-size: 15px;
+    opacity: 50%;
+    text-shadow: 2px 2px 2px black;
+}
+
+#delBtn {
+    background: url("../img/x.png");
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    border: none;
+    margin-left: 10px;
+    margin-right: 20px;
+}

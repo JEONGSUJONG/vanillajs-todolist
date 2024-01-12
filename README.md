@@ -445,5 +445,11 @@ navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
 <a href = https://openweathermap.org>바로가기</a>
 
   - Sign in -> API -> current weather data -> By geographic coordinates (좌표를 통한 날씨)
-  - 
+  - `https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}` : lat(위도), lon(경도), API Key(계정 My API keys) 입력
+
+  - `fetch(url)` : HTTP 요청 전송 기능 제공하는 Web API (자바스크립트 내장 라이브러리)
+    - 백앤드로부터 데이터를 받아오려면 api를 호출하고 데이터를 응답 받는다. 이 때 자바스크립트 Web API fetch() 함수를 쓰거나 axios 라이브러리를 사용할 수 있다.
+    - 검사 -> Network -> url 안에 정보가 보임 (Preview)
+
+
 </details>
