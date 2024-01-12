@@ -33,6 +33,7 @@ li {
 #greeting {
     border-bottom: 3px solid white;
     padding-bottom: 10px;
+    text-shadow: 2px 2px 2px black;
 }
 
 #todo-form input {
@@ -52,5 +53,9 @@ li {
 
 #todo-form input::placeholder {
     color: white;
+    text-shadow: 2px 2px 2px black;
+}
+
+#todo-list-span {
     text-shadow: 2px 2px 2px black;
 }
