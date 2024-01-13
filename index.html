@@ -1,54 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/font.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/detail.css" />
+    <link rel="stylesheet" href="css/form.css" />
+    <link rel="shortcut icon" href="img/3.png" />
+    <title>todolist</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="css/font.css" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/detail.css" />
-  <link rel="stylesheet" href="css/form.css" />
-  <link rel="shortcut icon" href="img/3.png" />
-  <title>todolist</title>
-</head>
+  <body>
+    <header>
+      <div id="weather">
+        <span></span>
+        <span></span>
+      </div>
+    </header>
 
-<body>
-  <header>
-    <div id="weather">
-      <span></span>
-      <span></span>
-    </div>
-  </header>
+    <h2 id="clock">00:00</h2>
+    <hr />
+    <form class="hidden" id="login-form">
+      <input required maxlength="15" type="text" placeholder="Type Your Name" />
+    </form>
 
-  <h2 id="clock">00:00</h2>
-  <hr />
-  <form class="hidden" id="login-form">
-    <input required maxlength="15" type="text" placeholder="Type Your Name" />
-  </form>
+    <h1 class="hidden" id="greeting"></h1>
 
-  <h1 class="hidden" id="greeting"></h1>
+    <form id="todo-form">
+      <input
+        required
+        maxlength="20"
+        type="text"
+        placeholder="Type To Do List"
+      />
+    </form>
 
-  <form id="todo-form">
-    <input required maxlength="20" type="text" placeholder="Type To Do List" />
-  </form>
+    <ul id="todo-list"></ul>
 
-  <ul id="todo-list"></ul>
-
-
-
-  <footer>
-    <div id="quote">
-      <span></span>
-      <span></span>
-    </div>
-  </footer>
-
-  <script src="js/weather.js"></script>
-  <script src="js/greeting.js"></script>
-  <script src="js/clock.js"></script>
-  <script src="js/background.js"></script>
-  <script src="js/todo.js"></script>
-  <script src="js/quotes.js"></script>
-</body>
-
+    <footer>
+      <div id="quote">
+        <span></span>
+        <span></span>
+      </div>
+    </footer>
+    <script src="js/weather.js"></script>
+    <script src="js/greeting.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/todo.js"></script>
+    <script src="js/quotes.js"></script>
+  </body>
 </html>
