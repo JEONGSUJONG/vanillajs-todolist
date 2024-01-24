@@ -1,4 +1,4 @@
-# Vanilla-JavaScript로 크롬 앱 만들기
+# Vanilla-JavaScript 로 크롬 앱 만들기
 
 <details>
 <summary>2024.01.10</summary>
