@@ -1,7 +1,5 @@
 # Vanilla-JavaScript로 크롬 앱 만들기
 
-[😮‍💨 노마드코드 강의 바로가기](https://nomadcoders.co/javascript-for-beginners/lobby)
-
 <details>
 <summary>2024.01.10</summary>
 <h2>#4.5 Saving Username</h2>
